@@ -1,0 +1,57 @@
+﻿@model Restaurant.Models.MasterCategoryMenu
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item"><a asp-action="Index" asp-controller="MasterCategoryMenu">Index</a></li>
+        <li class="breadcrumb-item active">Edit</li>
+
+    </ol>
+</nav>
+<div class="card">
+    <div class="card-body">
+
+
+<h1>Edit</h1>
+
+<h4>MasterCategoryMenu</h4>
+<hr />
+        <div class="row g-3">
+            <div class="col-lg-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MasterCategoryMenuId" />
+                    <input asp-for="CreateUser" class="form-control" hidden />
+                    <input asp-for="CreateDate" class="form-control" hidden />
+                    <input asp-for="IsActive" class="form-control" hidden />
+            <div class="form-group">
+                <label asp-for="MasterCategoryMenuName" class="control-label"></label>
+                <input asp-for="MasterCategoryMenuName" class="form-control" />
+                <span asp-validation-for="MasterCategoryMenuName" class="text-danger"></span>
+            </div>
+        @*     <div class="form-check form-switch">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+
+            <div class="form-check form-switch">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" asp-for="IsDelete" /> @Html.DisplayNameFor(model => model.IsDelete)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div> *@
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>

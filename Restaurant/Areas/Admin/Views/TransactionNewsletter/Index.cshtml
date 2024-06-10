@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Restaurant.Models.TransactionNewsletter>
+
+
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active">Index</li>
+
+    </ol>
+</nav>
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <div class="card-body">
+    <h1>TransactionNewsletter</h1>
+
+
+<p>
+            <a asp-action="Create" class="btn btn-primary">Create New    <i class="bi bi-plus-square">    </i></a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionNewsletterEmail)
+            </th>
+         @*    <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDelete)
+            </th> *@
+            <th hidden>
+                @Html.DisplayNameFor(model => model.CreateUser)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+         @*    <th>
+                @Html.DisplayNameFor(model => model.EditUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EditDate)
+            </th> *@
+                <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionNewsletterEmail)
+            </td>
+        @*     <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td> *@
+       @*      <td>
+                @Html.DisplayFor(modelItem => item.IsDelete)
+            </td>
+                <td hidden>
+                @Html.DisplayFor(modelItem => item.CreateUser)
+            </td>
+                <td hidden>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td> *@
+        @*     <td>
+                @Html.DisplayFor(modelItem => item.EditUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EditDate)
+            </td> *@
+                    <td class="align-middle text-center">
+                        @if (item.IsActive)
+                        {
+                            <a asp-action="Active" asp-route-id="@item.TransactionNewsletterId">
+                                <i class="ri-eye-fill text-success  fa-2xl"></i>
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-action="Active" asp-route-id="@item.TransactionNewsletterId">
+                                <i class="ri-eye-close-fill text-danger  fa-2xl"></i>
+                            </a>
+                        }
+                    </td>
+
+                </tr>
+}
+    </tbody>
+</table>
+</div>

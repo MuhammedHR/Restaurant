@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    Layout = "_Layout";
+
+
+}
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a asp-action="Index" asp-controller="Home">Home</a></li>
+
+    </ol>
+</nav>
+
+<h1>Welcome <span>@User.Identity.Name</span> To Home Page </h1>
+

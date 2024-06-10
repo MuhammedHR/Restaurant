@@ -1,0 +1,138 @@
+﻿@model Restaurant.ViewModels.MasterMenuModel
+
+
+
+
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active">Index</li>
+
+    </ol>
+</nav>
+<div>
+    <div class="card-body">
+
+        <h1>MasterMenu</h1>
+
+<p>
+            <a asp-action="Create" class="btn btn-primary">Create New    <i class="bi bi-plus-square">    </i></a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MasterMenuName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MasterMenuUrl)
+            </th>
+        @*     <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th> *@
+                        <th>Operation</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListMasterMenu)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MasterMenuName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MasterMenuUrl)
+                   @*  <img src="~/ImageApp/@item.MasterMenuUrl" style="max-width:50px" alt="jjj" /> *@
+
+            </td>
+          @*   <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td> *@
+         @*    <td>
+                @Html.DisplayFor(modelItem => item.IsDelete)
+            </td> *@
+    @*         <td>
+                @Html.DisplayFor(modelItem => item.CreateUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EditUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EditDate)
+            </td> *@
+
+                        <td class="align-middle">
+                            <a asp-action="Edit" asp-route-id="@item.MasterMenuId"><i class="bi bi-pencil-square"></i></a>
+
+                            <a href="" class="csBtnDelete" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                               data-path="@Url.ActionLink("Index", "MasterMenu", new { idDelete = item.MasterMenuId })">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                            @if (item.IsActive)
+                            {
+                                <a asp-action="Active" asp-route-id="@item.MasterMenuId">
+                                    <i class="ri-eye-fill text-success  fa-2xl"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-action="Active" asp-route-id="@item.MasterMenuId">
+                                    <i class="ri-eye-close-fill text-danger  fa-2xl"></i>
+                                </a>
+                            }
+                        </td>
+
+                    </tr>
+
+
+                }
+            </tbody>
+        </table>
+
+        @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+        </button>*@
+
+
+        <!-- Modal -->
+
+    </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure for delete this item ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="btnCansel" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="btnConfirmDelete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var dataPath = "";
+        $(".csBtnDelete").click(function () {
+            dataPath = $(this).data("path");
+        });
+        $("#btnConfirmDelete").click(function () {
+            window.location = dataPath;
+            dataPath = "";
+
+        });
+
+        $("#btnCancel").click(function () {
+            dataPath = "";
+        });
+    </script>

@@ -1,0 +1,367 @@
+﻿@model Restaurant.ViewModels.HomeModel
+<!DOCTYPE html>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*  <header class="header-area transparent-bar header-position">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                <div class="logo">
+                    <a href="index.html">
+                          <img class="logo-normal" alt="" src="~/assets/img/logo/logo.png">
+                        <img class="logo-sticky" alt="" src="~/assets/img/logo/logo-black.png">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8 col-7 col-sm-8 relative">
+                <div class="menu-search-bundle">
+                    <div class="main-menu">
+                        <nav>
+                            <ul>
+                                <li class="top-hover">
+                                    <a href="index.html">home </a>
+
+                                </li>
+                                <li><a href="about-us.html">about</a></li>
+                                <li class="mega-menu-position top-hover">
+                                    <a href="menu.html">menu </a>
+
+                                </li>
+
+
+                                <li><a href="contact.html">contact us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="search-wrap">
+                        <button class="search-toggle">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <div class="search">
+                            <form action="#">
+                                <input type="search" placeholder="Search here">
+                                <button type="submit">
+                                    Search
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                <div class="mobile-menu">
+                    <nav id="mobile-menu-active">
+                        <ul class="menu-overflow">
+                            <li>
+                                <a href="#">HOME</a>
+                                <ul>
+                                    <li><a href="index.html">home version 1</a></li>
+                                    <li><a href="index-2.html">home version 2</a></li>
+                                    <li><a href="index-3.html">home version 3</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">pages</a>
+                                <ul>
+                                    <li><a href="about-us.html">about us </a></li>
+                                    <li><a href="menu.html">menu style 1</a></li>
+                                    <li><a href="menu-2.html">menu style 2</a></li>
+                                    <li><a href="gallery.html">gallery style 1</a></li>
+                                    <li><a href="gallery-2.html">gallery style 2</a></li>
+                                    <li><a href="contact.html">contact us</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">menu</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">menu list 01</a>
+                                        <ul>
+                                            <li><a href="menu.html">salad</a></li>
+                                            <li><a href="menu.html">sandwich</a></li>
+                                            <li><a href="menu.html">bread</a></li>
+                                            <li><a href="menu.html">steak</a></li>
+                                            <li><a href="menu.html">tuna steak</a></li>
+                                            <li><a href="menu.html">spaghetti </a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">menu list 02</a>
+                                        <ul>
+                                            <li><a href="menu.html">rice</a></li>
+                                            <li><a href="menu.html">pizza</a></li>
+                                            <li><a href="menu.html">hamburger</a></li>
+                                            <li><a href="menu.html">eggs</a></li>
+                                            <li><a href="menu.html">sauces</a></li>
+                                            <li><a href="menu.html">apple juice</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">menu list 03</a>
+                                        <ul>
+                                            <li><a href="menu.html">milk</a></li>
+                                            <li><a href="menu.html">grape juice</a></li>
+                                            <li><a href="menu.html">cookie</a></li>
+                                            <li><a href="menu.html">candy</a></li>
+                                            <li><a href="menu.html">cake</a></li>
+                                            <li><a href="menu.html">cupcake</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">menu list 04</a>
+                                        <ul>
+                                            <li><a href="menu.html">pie</a></li>
+                                            <li><a href="menu.html">strawberry</a></li>
+                                            <li><a href="menu.html">sandwich</a></li>
+                                            <li><a href="menu.html">bread</a></li>
+                                            <li><a href="menu.html">steak</a></li>
+                                            <li><a href="menu.html">hamburger</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">blog</a>
+                                <ul>
+                                    <li><a href="blog-no-sidebar.html">Blog No sidebar</a></li>
+                                    <li><a href="blog.html">Blog sidebar</a></li>
+                                    <li><a href="blog-details.html">Blog details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html"> Contact us </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> *@
+ 
+ <div class="slider-area">
+    <div class="slider-active owl-dot-style owl-carousel">
+        @foreach (var item in Model.ListSlider)
+        {
+            <div class="single-slider bg-img height-100vh d-flex align-items-center justify-content-center" style="background-image:url(/ImageApp/@item.MasterSliderImage);">
+                <div class="slider-content pt-100">
+                    <div class="slider-content-wrap slider-animated-1">
+                        @*  <h2 class="animated">Welcome to <span>Basmoti</span> Restaurant</h2> *@
+                        @Html.Raw(item.MasterSliderTitle)
+                        @* <h1 class="animated"><span>Hot & spicy</span> food for you</h1> *@
+                        @Html.Raw(item.MasterSliderBreef)
+
+                        <p>@item.MasterSliderDesc</p>
+                        <div class="slider-btn mt-20">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @* <div class="single-slider bg-img height-100vh d-flex align-items-center justify-content-center" style="background-image:url(/assets/img/slider/slider-2.jpg);">
+        <div class="slider-content pt-100">
+        <div class="slider-content-wrap slider-animated-1">
+        <h2 class="animated">Welcome to <span>Basmoti</span> Restaurant</h2>
+        <h1 class="animated"><span>Basmoti</span> knows your taste</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque felis,eu condimentum. lorem ipsum dolor. lorem ipsum dolor sit amt.</p>
+        <div class="slider-btn mt-20">
+        <a class="animated" href="product-details.html">read more</a>
+        </div>
+        </div>
+        </div>
+        </div> *@
+    </div>
+</div>
+<div class="about-area ptb-95">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6">
+                <div class="about-content pr-30">
+                    <h2>@Model.SystemSetting.SystemSettingWelcomeNoteTitle </h2>
+                    <h3> @Model.SystemSetting.SystemSettingWelcomeNoteBreef </h3>
+                    <div class="about-peragraph">
+                        <p>@Model.SystemSetting.SystemSettingWelcomeNoteDesc</p>
+                        <div  class="default-btn-style mt-35">
+                            <a style="background-color:#000000" asp-action="index" asp-controller="Home">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-img">
+                    <img alt="" src="~/ImageApp/@Model.SystemSetting.SystemSettingWelcomeNoteImageUrl">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popular-product gray-bg pt-100 pb-100">
+    <div class="container">
+        <div class="section-title text-center mb-50">
+            <h2 style="color:white">Our Popular Dishes</h2>
+            <p style="color:white"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
+        </div>
+        <div class="product-slider-active owl-carousel">
+                  @foreach (var item in Model.ListItemMenu){
+                    if (item.MasterCategoryMenu.MasterCategoryMenuName == "DINNER")
+                    {
+                    <div class="product-style-wrap">
+
+
+                        <img  alt="" src="~/ImageApp/@item.MasterItemMenuImageUrl">
+                        <div class="product-content text-center">
+                            <h4>
+                                @item.MasterItemMenuTitle
+                            </h4>
+                            <p>@item.MasterItemMenuDesc</p>
+                            <span>$@item.MasterItemMenuPrice</span>
+
+                        </div>
+                    </div>
+
+                    }
+
+               
+
+                  
+                  }
+                             
+                 
+                    
+           
+                
+                            
+            
+         
+        </div>
+    </div>
+    <div class="popular-bg-img">
+        <img alt="" style="WIDTH: 647%;
+    FLOAT: RIGHT;
+    PADDING-BOTTOM: 305PX;
+    MARGIN-BOTTOM: -286PX;
+    PADDING-LEFT: 215PX;" src="~/assets/img/banner/popular2.png">
+    </div>
+</div>
+
+
+<div class="book-table ptb-100 bg-img" id="book" style="background-image:url(/assets/img/banner/);">
+    <div class="container">
+        <div class="section-title text-center mb-50">
+            <h2>Make An Order</h2>
+            <p>You Will Taste The Delishes Burger in Your Life .. Make An Order </p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div  class="reserve-form">
+                    <h3 style="color:#000000" class="reserv-title">Reservation Form</h3>
+                    <form asp-action="CreateTable">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input asp-for="TransactionBookTable.TransactionBookTableId" value="0" hidden>
+                        <div class="reserve-form-top">
+
+                            <input asp-for="TransactionBookTable.TransactionBookTableFullName" placeholder="Full name">
+                            <span asp-validation-for="TransactionBookTable.TransactionBookTableFullName" class="text-danger"></span>
+
+                            <input asp-for="TransactionBookTable.TransactionBookTableEmail" placeholder="Email address">
+                            <span asp-validation-for="TransactionBookTable.TransactionBookTableEmail" class="text-danger"></span>
+
+                            <input asp-for="TransactionBookTable.TransactionBookTableMobileNumber" placeholder="Mobile number">
+                            <span asp-validation-for="TransactionBookTable.TransactionBookTableMobileNumber" class="text-danger"></span>
+
+                            <div class="date-time">
+                                <select asp-for="TransactionBookTable.TransactionBookTableDate">
+                                    <option value="" disabled selected>Select Date And Time</option>
+                                    <option value="2022-12-26T22:00:00.0000000">26 Dec - 10.00pm</option>
+                                    <option value="2023-01-02T22:00:00.0000000">2 Jan - 10.00pm</option>
+                                    <option value="2022-12-17T22:00:00.0000000">17 Dec - 10.00pm</option>
+                                </select>
+                                <span asp-validation-for="TransactionBookTable.TransactionBookTableDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div  class="reserve-submit mt-40">
+                            <button style="background: #000000" type="submit"> submit </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="book-img">
+                    <img style="margin-top: -36px;" src="assets/img/banner/1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background-color:black;" class="testimonial-area ptb-100 gray-bg">
+
+    <div class="container">
+        <div class="section-title text-center mb-50" >
+            <h2 style="color:white">what people say</h2>
+            <p style="color:white"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="testimonial-image-slider text-center">
+                    @foreach (var item in Model.ListWhatPeopleSay)
+                    {
+                        <div class="single-testi-text" style="border-color:white">
+                            <p style="color:black ; border-color:white ; border: 2px solid #ffffff;">@item.WhatPeopleSayDescription</p>
+                        </div>
+                    }
+                </div>
+                <div class="testimonial-text-slider text-center">
+                    @foreach (var item in Model.ListWhatPeopleSay)
+                    {
+                        <div class="single-testi-img">
+                            <img src="~/ImageApp/@item.WhatPeopleSayImage" alt="testi 1" />
+                            <h3 style="color:white">@item.WhatPeopleSayName</h3>
+                            <h5 style="color:white">customer</h5>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+    <div class="offer-area gray-bg ptb-100 bg-img" style="background-image:url(/ImageApp/@Model.Offer.MasterOfferImageUrl);">
+        <div class="container">
+            <div class="row">
+                <div class="xl-auto col-xl-5 ms-auto col-lg-6 col-md-12">
+                    <div class="offer-content">
+                        <h5>@Model.Offer.MasterOfferTitle</h5>
+                    <h2>@Model.Offer.MasterOfferBreef</h2>
+                    <p>@Model.Offer.MasterOfferDesc</p>
+                        <div class="default-btn-style book-btn mt-35">
+                            <a style="color:black" class="scroll-up" href="#book">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="brand-logo-area ptb-100">
+    <div class="container">
+        <div class="brand-logo-active owl-carousel">
+            @foreach (var item in Model.ListPartner)
+            {
+                <div class="single-brand-logo">
+                    <img alt="" src="~/ImageApp/@item.MasterPartnerLogoImageUrl">
+                </div>
+            }
+        </div>
+    </div>
+</div>

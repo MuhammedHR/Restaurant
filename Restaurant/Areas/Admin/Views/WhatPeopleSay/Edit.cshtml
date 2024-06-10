@@ -1,0 +1,87 @@
+﻿@model Restaurant.ViewModels.WhatPeopleSayModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item"><a asp-action="Index" asp-controller="MasterOffer">Index</a></li>
+        <li class="breadcrumb-item active">Edit</li>
+
+    </ol>
+</nav>
+<div class="card">
+    <div class="card-body">
+
+        <h1>Edit</h1>
+
+<h4>WhatPeopleSay</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+                <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WhatPeopleSayId" />
+                    <input asp-for="CreateUser" class="form-control" hidden />
+                    <input asp-for="CreateDate" class="form-control" hidden />
+                    <input asp-for="IsActive" class="form-control" hidden />
+            <div class="form-group">
+                <label asp-for="WhatPeopleSayName" class="control-label"></label>
+                <input asp-for="WhatPeopleSayName" class="form-control" />
+                <span asp-validation-for="WhatPeopleSayName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WhatPeopleSayDescription" class="control-label"></label>
+                <input asp-for="WhatPeopleSayDescription" class="form-control" />
+                <span asp-validation-for="WhatPeopleSayDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="File" class="control-label"></label>
+                <input asp-for="File" class="form-control" />
+                        <input type="hidden" asp-for="WhatPeopleSayImage" class="form-control" />
+
+                <span asp-validation-for="File" class="text-danger"></span>
+            </div>
+  @*           <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsDelete" /> @Html.DisplayNameFor(model => model.IsDelete)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateUser" class="control-label"></label>
+                <input asp-for="CreateUser" class="form-control" />
+                <span asp-validation-for="CreateUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateDate" class="control-label"></label>
+                <input asp-for="CreateDate" class="form-control" />
+                <span asp-validation-for="CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EditUser" class="control-label"></label>
+                <input asp-for="EditUser" class="form-control" />
+                <span asp-validation-for="EditUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EditDate" class="control-label"></label>
+                <input asp-for="EditDate" class="form-control" />
+                <span asp-validation-for="EditDate" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
